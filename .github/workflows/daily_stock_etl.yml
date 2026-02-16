@@ -29,7 +29,3 @@ jobs:
         # Lấy cái mật khẩu giấu trong két sắt ra đưa cho file Python
         DB_URL: ${{ secrets.DB_URL }}
       run: python etl_pipeline.py
-
-    # DÒNG CHỐT HẠ ĂN TIỀN
-    - name: Lách luật 60 ngày (Keepalive Workflow)
-      uses: gautamkrishnar/keepalive-workflow@v2
