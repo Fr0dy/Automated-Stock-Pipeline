@@ -6,10 +6,6 @@ on:
     - cron: '15 8 * * 1-5'
   workflow_dispatch: # Nút ma thuật: Cho phép bấm chạy bằng tay bất cứ lúc nào để test
 
-# BẮT BUỘC THÊM CÁI NÀY: Cấp quyền cho Bot được phép tự viết code lên Repo của ông
-permissions:
-  contents: write
-
 jobs:
   run-etl:
     runs-on: ubuntu-latest # Thuê 1 cái máy ảo Linux xịn nhất của GitHub
