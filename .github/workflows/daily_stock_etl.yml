@@ -6,6 +6,10 @@ on:
     - cron: '15 8 * * 1-5'
   workflow_dispatch: # Nút ma thuật: Cho phép bấm chạy bằng tay bất cứ lúc nào để test
 
+# BẮT BUỘC THÊM CÁI NÀY: Cấp quyền cho Bot được phép tự viết code lên Repo của ông
+permissions:
+  contents: write
+
 jobs:
   run-etl:
     runs-on: ubuntu-latest # Thuê 1 cái máy ảo Linux xịn nhất của GitHub
@@ -29,3 +33,7 @@ jobs:
         # Lấy cái mật khẩu giấu trong két sắt ra đưa cho file Python
         DB_URL: ${{ secrets.DB_URL }}
       run: python etl_pipeline.py
+
+    # DÒNG CHỐT HẠ ĂN TIỀN
+    - name: Lách luật 60 ngày (Keepalive Workflow)
+      uses: gautamkrishnar/keepalive-workflow@v2
